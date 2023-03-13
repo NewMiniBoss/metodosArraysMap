@@ -9,4 +9,5 @@ allFilter.forEach(categoria => {
 function filtrarCategoria(categoria) {
     let livrosFiltrados = livros.filter(x => x.categoria == categoria);
     console.table(livrosFiltrados);
-}
+    exibirLivros(livrosFiltrados);
+}  

@@ -1,6 +1,7 @@
 const sectionLivros = document.querySelector('#livros');
 
 function exibirLivros(listaLivros) {
+    sectionLivros.innerHTML = '';
     listaLivros.forEach(element => {
         sectionLivros.innerHTML +=
             `
