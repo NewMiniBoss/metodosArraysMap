@@ -1,4 +1,5 @@
 const sectionLivros = document.querySelector('#livros');
+const totalPreco = document.querySelector('#valor_total_livros_disponiveis');
 
 function exibirLivros(listaLivros) {
     sectionLivros.innerHTML = '';

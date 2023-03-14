@@ -7,7 +7,21 @@ allFilter.forEach(categoria => {
 })
 
 function filtrarCategoria(categoria) {
-    let livrosFiltrados = livros.filter(x => x.categoria == categoria);
-    console.table(livrosFiltrados);
+    let livrosFiltrados = categoria == `disponível` ? disponiveis() : filtraCategoria();
     exibirLivros(livrosFiltrados);
-}  
+
+    function filtraCategoria() {
+        totalPreco.innerHTML = ``;
+        return livros.filter(x => x.categoria == categoria);
+    }
+
+    function disponiveis() {
+        totalPreco.innerHTML =
+            `
+                <div class="livros__disponiveis">
+                    <p>Todos os livros disponíveis por R$ <span id="valor">299,00</span></p>
+                </div>
+            `;
+        return livros.filter(x => x.quantidade > 0);
+    }
+}
